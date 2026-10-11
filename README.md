@@ -27,3 +27,15 @@ If you need additional support, please navigate to the course page and reach out
 
 ## FUTURE USE
 Take this opportunity to create or add to a simple resume portfolio to highlight and showcase your work for future use in career search, experience, and education!
+
+## PROCESS
+Latest Node.js version
+Latest Java version
+Latest Maven version
+Latest Angular version
+Install PostgreSQL, including pgAdmin, making note of password used
+Create and clone repo
+Create spring project via start.spring.io
+Copy files into repo, let Java build project
+Launch pgAdmin, connect to server, create new database in server
+Navigate to application.properties to update database info (lines 3-10)
