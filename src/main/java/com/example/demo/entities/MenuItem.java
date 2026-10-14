@@ -24,20 +24,22 @@ public abstract class MenuItem {
     public MenuItem() {
     }
 
-    public MenuItem(String itemName, LocalDate addDate, LocalDate removeDate, String treatType, String itemTags){
+    public MenuItem(String itemName, LocalDate addDate, LocalDate removeDate, String treatType, String itemTags, int menuOrder){
         this.itemName = itemName;
         this.addDate = addDate;
         this.removeDate = removeDate;
         this.treatType = treatType;
         this.itemTags = itemTags;
+        this.menuOrder = menuOrder;
     }
 
-    public MenuItem(long id, String itemName, LocalDate addDate, LocalDate removeDate, String treatType, String itemTags){
+    public MenuItem(long id, String itemName, LocalDate addDate, LocalDate removeDate, String treatType, int menuOrder, String itemTags){
         this.id = id;
         this.itemName = itemName;
         this.addDate = addDate;
         this.removeDate = removeDate;
         this.treatType = treatType;
+        this.menuOrder = menuOrder;
         this.itemTags = itemTags;
     }
 
@@ -87,6 +89,14 @@ public abstract class MenuItem {
 
     public void setItemTags(String itemTags) {
         this.itemTags = itemTags;
+    }
+
+    public int getMenuOrder() {
+        return menuOrder;
+    }
+
+    public void setMenuOrder(int menuOrder) {
+        this.menuOrder = menuOrder;
     }
 
     public String toString() {

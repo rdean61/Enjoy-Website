@@ -20,41 +20,45 @@ public abstract class Review {
     int rating;
     String name;
     LocalDate reviewDate;
-    int displayStatus;
+    boolean displayStatus;
     String email;
 
     public Review() {
     }
 
-    public Review(String reviewContent, int rating, String name, LocalDate reviewDate) {
+    public Review(String reviewContent, int rating, String name, LocalDate reviewDate, boolean displayStatus) {
         this.reviewContent = reviewContent;
         this.rating = rating;
         this.name = name;
         this.reviewDate = reviewDate;
+        this.displayStatus = displayStatus;
     }
 
-    public Review(String reviewContent, int rating, String name, LocalDate reviewDate, String email) {
+    public Review(String reviewContent, int rating, String name, LocalDate reviewDate, boolean displayStatus, String email) {
         this.reviewContent = reviewContent;
         this.rating = rating;
         this.name = name;
         this.reviewDate = reviewDate;
+        this.displayStatus = displayStatus;
         this.email = email;
     }
 
-    public Review(Long id, String reviewContent, int rating, String name, LocalDate reviewDate) {
+    public Review(Long id, String reviewContent, int rating, String name, LocalDate reviewDate, boolean displayStatus) {
         this.id = id;
         this.reviewContent = reviewContent;
         this.rating = rating;
         this.name = name;
         this.reviewDate = reviewDate;
+        this.displayStatus = displayStatus;
     }
 
-    public Review(Long id, String reviewContent, int rating, String name, LocalDate reviewDate, String email) {
+    public Review(Long id, String reviewContent, int rating, String name, LocalDate reviewDate, boolean displayStatus, String email) {
         this.id = id;
         this.reviewContent = reviewContent;
         this.rating = rating;
         this.name = name;
         this.reviewDate = reviewDate;
+        this.displayStatus = displayStatus;
         this.email = email;
     }
 
@@ -104,6 +108,14 @@ public abstract class Review {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean getDisplayStatus() {
+        return displayStatus;
+    }
+
+    public void setDisplayStatus(boolean displayStatus) {
+        this.displayStatus = displayStatus;
     }
 
     public String toString() {
