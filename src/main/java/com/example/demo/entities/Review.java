@@ -1,5 +1,120 @@
 package com.example.demo.entities;
 
-public class Review {
+import jakarta.persistence.*;
+import java.time.LocalDate;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.Max;
+
+@Entity
+@Table(name = "Reviews")
+public abstract class Review {
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
+    String reviewContent;
+    @Min(value = 0, message = "Rating cannot be less than 5 stars.")
+    @Max(value = 5, message = "Rating cannot be higher than 5 stars.")
+    int rating;
+    String name;
+    LocalDate reviewDate;
+    int displayStatus;
+    String email;
+
+    public Review() {
+    }
+
+    public Review(String reviewContent, int rating, String name, LocalDate reviewDate) {
+        this.reviewContent = reviewContent;
+        this.rating = rating;
+        this.name = name;
+        this.reviewDate = reviewDate;
+    }
+
+    public Review(String reviewContent, int rating, String name, LocalDate reviewDate, String email) {
+        this.reviewContent = reviewContent;
+        this.rating = rating;
+        this.name = name;
+        this.reviewDate = reviewDate;
+        this.email = email;
+    }
+
+    public Review(Long id, String reviewContent, int rating, String name, LocalDate reviewDate) {
+        this.id = id;
+        this.reviewContent = reviewContent;
+        this.rating = rating;
+        this.name = name;
+        this.reviewDate = reviewDate;
+    }
+
+    public Review(Long id, String reviewContent, int rating, String name, LocalDate reviewDate, String email) {
+        this.id = id;
+        this.reviewContent = reviewContent;
+        this.rating = rating;
+        this.name = name;
+        this.reviewDate = reviewDate;
+        this.email = email;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getReviewContent() {
+        return reviewContent;
+    }
+
+    public void setReviewContent(String reviewContent) {
+        this.reviewContent = reviewContent;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public LocalDate getReviewDate() {
+        return reviewDate;
+    }
+
+    public void setReviewDate(LocalDate reviewDate) {
+        this.reviewDate = reviewDate;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String toString() {
+        return this.name;
+    }
+
+    @Override
+    public boolean equals (Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Review review = (Review) o;
+
+        return id == review.id;
+    }
 
 }

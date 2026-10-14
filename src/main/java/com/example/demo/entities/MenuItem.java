@@ -86,10 +86,6 @@ public abstract class MenuItem {
         this.itemTags = itemTags;
     }
 
-    public void updateItemTags(String itemTags) {
-        this.itemTags = this.itemTags + ", " + itemTags;
-    }
-
     public String toString() {
         return this.itemName;
     }
