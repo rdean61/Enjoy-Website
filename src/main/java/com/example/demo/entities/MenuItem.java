@@ -1,9 +1,12 @@
 package com.example.demo.entities;
 
+import com.example.demo.validators.ValidDeleteMenuItem;
+
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@ValidDeleteMenuItem
 @Table(name = "MenuItems")
 public abstract class MenuItem {
     @Id

@@ -1,11 +1,14 @@
 package com.example.demo.entities;
 
+import com.example.demo.validators.ValidDeleteReview;
+
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Max;
 
 @Entity
+@ValidDeleteReview
 @Table(name = "Reviews")
 public abstract class Review {
     @Id 
