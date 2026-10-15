@@ -1,5 +1,5 @@
 package com.example.demo.services;
 
-public class MenuEditorServiceImpl {
+public class MenuItemServiceImpl {
 
 }
