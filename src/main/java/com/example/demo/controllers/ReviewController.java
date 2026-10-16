@@ -19,7 +19,7 @@ public class ReviewController {
     private ApplicationContext context;
 
     @GetMapping("/deleteReview")
-    public String deleteReview(@Valid @RequestParam("id") in theId, Model theModel) {
+    public String deleteReview(@Valid @RequestParam("id") int theId, Model theModel) {
         ReviewService repo = context.getBean(ReviewServiceImpl.class);
         Review review = repo.findById(theId);
         if(review.getDisplayStatus() == false) {
