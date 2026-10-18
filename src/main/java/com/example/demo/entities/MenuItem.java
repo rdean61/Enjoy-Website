@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Entity
 @ValidDeleteMenuItem
 @Table(name = "MenuItems")
-public abstract class MenuItem {
+public class MenuItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;

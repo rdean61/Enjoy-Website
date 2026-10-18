@@ -10,7 +10,7 @@ import jakarta.validation.constraints.Max;
 @Entity
 @ValidDeleteReview
 @Table(name = "Reviews")
-public abstract class Review {
+public class Review {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
