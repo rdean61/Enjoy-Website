@@ -6,8 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
 
 import jakarta.validation.Valid;
+import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/menu-items")
@@ -15,6 +18,14 @@ import jakarta.validation.Valid;
 public class MenuItemController {
     @Autowired
     private ApplicationContext context;
+
+    @GetMapping 
+    public ResponseEntity<Map<String, String>> getMenuItems(){
+        Map<String, String> response = new HashMap<>();
+        response.put("message", "API connected to spring");
+
+        return ResponseEntity.ok(response);
+    }
 
     @GetMapping("/deleteMenuItem")
     public String deletePart(@Valid @RequestParam("id") int theId, Model theModel) {
