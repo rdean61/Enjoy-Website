@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuService } from '../../services/menu';
+import { MenuitemService } from '../../services/menuitem';
 
 @Component({
   imports: [CommonModule],
@@ -12,7 +12,7 @@ export class Menu implements OnInit{
 
   public menuItems: any [] = [];
 
-  constructor(private menuService: MenuService) {}
+  constructor(private menuService: MenuitemService) {}
 
   ngOnInit(): void {
     

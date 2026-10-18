@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment.development';
 
 })
 
-export class MenuService {
+export class MenuitemService {
 
     private http = inject(HttpClient);
 

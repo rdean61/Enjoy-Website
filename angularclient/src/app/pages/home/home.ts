@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeService } from '../../services/home';
+import { ReviewService } from '../../services/review';
 
 @Component({
   imports: [CommonModule],
@@ -13,11 +13,11 @@ export class Home implements OnInit {
 
   public reviews: any[] = [];
 
-  constructor(private homeService: HomeService) {}
+  constructor(private reviewService: ReviewService) {}
 
   ngOnInit(): void {
     
-    this.homeService.getReview().subscribe({
+    this.reviewService.getReview().subscribe({
 
       next: (data) => {
 
