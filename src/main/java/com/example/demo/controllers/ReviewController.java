@@ -20,9 +20,10 @@ public class ReviewController {
     private ApplicationContext context;
 
     @GetMapping 
-    public ResponseEntity<Map<String, String>> getReviews(){
-        Map<String, String> response = new HashMap<>();
-        response.put("message", "API connected to spring");
+    public ResponseEntity<?> getReviews(){
+        ReviewService repo = context.getBean(ReviewServiceImpl.class);
+
+        var response = repo.findAll();
 
         return ResponseEntity.ok(response);
     }

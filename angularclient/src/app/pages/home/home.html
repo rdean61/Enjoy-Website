@@ -1,1 +1,9 @@
-<p>home works!</p>
+<div>
+    <h2>Business Name</h2>
+
+    <div>
+        @for (item of reviews; track item.id) {
+            <h5>{{ item.reviewContent }}</h5>
+        }
+    </div>
+</div>
