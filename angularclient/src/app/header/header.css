@@ -1,0 +1,49 @@
+header {
+    background: #fdf4df;
+    text-align: left;
+    width: auto;
+    justify-content: left;
+    display: flex;
+    align-items: center;
+    outline: 2px solid black;
+    padding-left: 20px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: black;
+}
+
+header nav a.active {
+    border-bottom: 2px solid black;
+}
+
+header nav a:hover {
+    border-bottom: 2px solid black;
+}
+
+header h1 {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+header nav {
+    margin-right: auto;
+    display: flex;
+    flex: auto;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5%;
+    font-size: 150%;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    justify-items: left;
+    margin-right: 2%;
+    gap: 25%;
+    flex-direction: row-reverse;
+    
+}
