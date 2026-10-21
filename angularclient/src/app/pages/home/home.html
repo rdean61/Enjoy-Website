@@ -3,62 +3,62 @@
         <div class="gallery-container">
             <div class="gallery-slideshow hide" [style.display]="galleryCounter === 1 ? 'block' : 'none'">
                 <div class ="gallery-image">
-                    <img src="ECT_logo.png">
-                    <div class="caption">Treat 1</div>
+                    <img src="gallery/gallery_1.jpg">
+                    <div class="caption">Key Lime Mini Cheesecakes</div>
                 </div>
             </div>
             <div class="gallery-slideshow hide" [style.display]="galleryCounter === 2 ? 'block' : 'none'">
                 <div class ="gallery-image">
-                    <img src="ECT_logo.png">
-                    <div class="caption">Treat 2</div> 
+                    <img src="gallery/gallery_2.jpg">
+                    <div class="caption">8" Boston Cream Custom Cheesecake</div> 
                 </div>
             </div>
             <div class="gallery-slideshow hide" [style.display]="galleryCounter === 3 ? 'block' : 'none'">
                 <div class ="gallery-image">
-                    <img src="ECT_logo.png">
-                    <div class="caption">Treat 3</div> 
+                    <img src="gallery/gallery_3.jpg">
+                    <div class="caption">4" Red Velvet Custom Cheesecake</div> 
                 </div>
             </div>
             <div class="gallery-slideshow hide" [style.display]="galleryCounter === 4 ? 'block' : 'none'">
                 <div class ="gallery-image">
-                    <img src="ECT_logo.png">
-                    <div class="caption">Treat 4</div> 
+                    <img src="gallery/gallery_4.jpg">
+                    <div class="caption">6" Custom Birthday Cake</div> 
                 </div>
             </div>
             <div class="gallery-slideshow hide" [style.display]="galleryCounter === 5 ? 'block' : 'none'">
                 <div class ="gallery-image">
-                    <img src="ECT_logo.png">
-                    <div class="caption">Treat 5</div> 
+                    <img src="gallery/gallery_5.jpg">
+                    <div class="caption">8" Classic with Berries Custom Cheesecake</div> 
                 </div>
             </div>
             <div class="gallery-slideshow hide" [style.display]="galleryCounter === 6 ? 'block' : 'none'">
                 <div class ="gallery-image">
-                    <img src="ECT_logo.png">
-                    <div class="caption">Treat 6</div> 
+                    <img src="gallery/gallery_6.jpg">
+                    <div class="caption">8" Cinnamon Roll Custom Wedding Cheesecake</div> 
                 </div>
             </div>
             <div class="gallery-slideshow hide" [style.display]="galleryCounter === 7 ? 'block' : 'none'">
                 <div class ="gallery-image">
-                    <img src="ECT_logo.png">
-                    <div class="caption">Treat 7</div> 
+                    <img src="gallery/gallery_7.jpg">
+                    <div class="caption">Chocolate Cookie Butter Mini Cheesecakes</div> 
                 </div>
             </div>
             <div class="gallery-slideshow hide" [style.display]="galleryCounter === 8 ? 'block' : 'none'">
                 <div class ="gallery-image">
-                    <img src="ECT_logo.png">
-                    <div class="caption">Treat 8</div> 
+                    <img src="gallery/gallery_8.jpg">
+                    <div class="caption">6" Chanel Custom Birthday Cake</div> 
                 </div>
             </div>
             <div class="gallery-slideshow hide" [style.display]="galleryCounter === 9 ? 'block' : 'none'">
                 <div class ="gallery-image">
-                    <img src="ECT_logo.png">
-                    <div class="caption">Treat 9</div> 
+                    <img src="gallery/gallery_9.jpg">
+                    <div class="caption">8" Strawberry Banana Custom Cheesecake</div> 
                 </div>
             </div>
             <div class="gallery-slideshow hide" [style.display]="galleryCounter === 10 ? 'block' : 'none'">
                 <div class ="gallery-image">
-                    <img src="ECT_logo.png">
-                    <div class="caption">Treat 10</div> 
+                    <img src="gallery/gallery_10.jpg">
+                    <div class="caption">9" Vintage Hello Kitty Custom Cake </div> 
                 </div>
             </div>
         <br>
@@ -81,22 +81,19 @@
     </div>
 
 <div>
-    <div class="div-row">
+    <div class="div-row" style="padding-bottom: 2%;">
         <div class="review-container">
             <h3>Check out our reviews!</h3>
-            <div class="review-content-row">
+            <div class="review-content-row hide">
                 <p class="quote">"</p>
-                @for (item of reviews; track item.id) {
-                <h5>{{ item.reviewContent }}</h5> }
+                <h5>{{ reviews[reviewCounter].reviewContent }}</h5> 
                 <p class="quote">"</p>
             </div>
             <div class="rating-container">
-                 @for (item of reviews; track item.id) {
-                <h7>{{ item.rating }}</h7> }
-            </div>
-            <div class="reviewer-container">
-                @for (item of reviews; track item.id) {
-                    <h7>- {{ item.name }}</h7> }
+                <div class="reviewer-container">
+                    <h6>- {{ reviews[reviewCounter].name }}</h6> 
+                </div>
+                <h6 class="stars">{{ getRatingStars(reviews[reviewCounter].rating) }}</h6> 
             </div>
         </div>
     </div>

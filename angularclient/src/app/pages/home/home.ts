@@ -14,7 +14,16 @@ export class Home implements OnInit, OnDestroy {
   public reviews: any[] = [];
   public galleryCounter: number = 1;
   public galleryTotal: number = 10;
-  private counter: any;
+  private timerGallery: any;
+  private timerReviews: any;
+  public reviewCounter: number = 0;
+
+  public getRatingStars(rating: number): string {
+    const maxStars =5;
+    const ratedStar = "★".repeat(rating);
+    const unratedStar = "☆".repeat(maxStars - rating);
+    return ratedStar + unratedStar;
+  }
 
   constructor(private reviewService: ReviewService,
               private changeDetector: ChangeDetectorRef
@@ -28,6 +37,7 @@ export class Home implements OnInit, OnDestroy {
 
         this.reviews = data;
         console.log('Reviews loaded:', data);
+        this.changeDetector.detectChanges();
 
       },
       error: (err) => {
@@ -37,20 +47,40 @@ export class Home implements OnInit, OnDestroy {
     });
 
     this.startGallery();
+    this.startReviewDisplay();
   }
 
   startGallery(): void{
-    this.counter = setInterval(() => {
+    this.timerGallery = setInterval(() => {
       this.galleryCounter = (this.galleryCounter % this.galleryTotal) + 1;
+
+      if(this.reviews && this.reviews.length > 0) {
+        this.reviewCounter = (this.reviewCounter + 1) % this.reviews.length;
+      }
 
       this.changeDetector.detectChanges();
 
-    }, 5000);
-  }
+    }, 5000);}
+
+
+    startReviewDisplay(): void{
+    this.timerReviews = setInterval(() => {
+
+      if(this.reviews && this.reviews.length > 0) {
+        this.reviewCounter = (this.reviewCounter + 1) % this.reviews.length;
+      }
+
+      this.changeDetector.detectChanges();
+
+    }, 10000);}
 
   ngOnDestroy(): void {
-    if(this.counter) {
-      clearInterval(this.counter);
+    if(this.timerGallery) {
+      clearInterval(this.timerGallery);
+    }
+
+    if(this.timerReviews) {
+      clearInterval(this.timerReviews);
     }
   }
 
