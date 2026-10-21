@@ -17,6 +17,9 @@ header a.active {
 header nav a {
     text-decoration: none;
     color: black;
+    font-family: "Trirong", serif;
+    font-weight: 450;
+    font-style: normal;
 }
 
 header nav a.active {
@@ -32,6 +35,9 @@ header nav a:hover {
 header h1 {
     margin-left: 2%;
     margin-right: 2%;
+    font-family: "Trirong", serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 header nav {

@@ -85,10 +85,18 @@
         <div class="review-container">
             <h3>Check out our reviews!</h3>
             <div class="review-content-row">
-                <img src="ECT_logo.png">
+                <p class="quote">"</p>
                 @for (item of reviews; track item.id) {
                 <h5>{{ item.reviewContent }}</h5> }
-                <img src="ECT_logo.png">
+                <p class="quote">"</p>
+            </div>
+            <div class="rating-container">
+                 @for (item of reviews; track item.id) {
+                <h7>{{ item.rating }}</h7> }
+            </div>
+            <div class="reviewer-container">
+                @for (item of reviews; track item.id) {
+                    <h7>- {{ item.name }}</h7> }
             </div>
         </div>
     </div>

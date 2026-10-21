@@ -12,6 +12,9 @@ footer {
 footer h3 {
     text-decoration: underline;
     font-size: 200%;
+    font-family: "Trirong", serif;
+    font-weight: 500;
+    font-style: normal;
 }
 
 footer iframe {
@@ -26,6 +29,12 @@ footer iframe {
     flex: 1;
     margin: 0 10px;
     box-sizing: border-box;
+}
+
+.foot a, .foot p {
+    font-family: "Trirong", serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
 .foot > ul {

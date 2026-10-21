@@ -25,6 +25,9 @@
 }
 
 #motto {
+    font-family: "Trirong", serif;
+    font-weight: 200;
+    font-style: italic;
     text-align: center;
     max-width: 700px;
     font-size: 200%;
@@ -93,15 +96,50 @@
 
 .review-content-row {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
-.review-content-row img {
-    width: 50px;
-    height: 50px;
+.review-container {
+    max-width: 60%;
+}
+
+.review-container h3 {
+    text-align: center;
+    font-family: "Trirong", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.review-content-row {
+    gap: 10%px;
+}
+
+.quote {
+    text-align: center;
+    font-family: "Trirong", serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 150%;
 }
 
 .review-content-row h5 {
     margin-top: auto;
+    text-align: center;
+    max-width: 75%;
+    padding-top: 20px;
+    font-family: "Trirong", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.rating-container {
+    text-align: center;
+}
+
+.reviewer-container {
+    text-align: center;
+    font-family: "Trirong", serif;
+    font-weight: 400;
+    font-style: normal;
 }
 

@@ -25,11 +25,11 @@ public class BootStrapData implements CommandLineRunner{
 
         if(reviewRepository.count() == 0){
         Review placeholderReview = new Review();
-        placeholderReview.setReviewContent("SAMPLE TEXT");
+        placeholderReview.setReviewContent("This bakery is such a little gem. I took my son to pick out mini cheesecakes for his birthday. Every single flavor was delicious and perfect. The owner was so pleasant to chat with. We are not from the area but I highly recommend this shop and will definitely be returning on future trips to VA Beach!");
         placeholderReview.setRating(5);
-        placeholderReview.setName("Reviewer");
+        placeholderReview.setName("Katriina Bell");
         placeholderReview.setReviewDate(LocalDate.now());
-        placeholderReview.setDisplayStatus(false);
+        placeholderReview.setDisplayStatus(true);
         reviewRepository.save(placeholderReview);
         }
 
