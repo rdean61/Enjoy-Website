@@ -9,6 +9,11 @@ header {
     padding-left: 20px;
 }
 
+header a.active {
+    pointer-events: none;
+    cursor: default;
+}
+
 header nav a {
     text-decoration: none;
     color: black;
@@ -16,6 +21,8 @@ header nav a {
 
 header nav a.active {
     border-bottom: 2px solid black;
+    pointer-events: none;
+    cursor: default;
 }
 
 header nav a:hover {
@@ -42,8 +49,9 @@ header ul {
     align-items: center;
     flex: 0 0 auto;
     justify-items: left;
-    margin-right: 2%;
-    gap: 25%;
+    margin-right: 1%;
+    gap: 20%;
     flex-direction: row-reverse;
     
 }
+
