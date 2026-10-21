@@ -81,10 +81,16 @@
     </div>
 
 <div>
-    <div>
-        @for (item of reviews; track item.id) {
-            <h5>{{ item.reviewContent }}</h5>
-        }
+    <div class="div-row">
+        <div class="review-container">
+            <h3>Check out our reviews!</h3>
+            <div class="review-content-row">
+                <img src="ECT_logo.png">
+                @for (item of reviews; track item.id) {
+                <h5>{{ item.reviewContent }}</h5> }
+                <img src="ECT_logo.png">
+            </div>
+        </div>
     </div>
 </div>
 </div>
