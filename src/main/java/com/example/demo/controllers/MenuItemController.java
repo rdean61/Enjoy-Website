@@ -20,9 +20,10 @@ public class MenuItemController {
     private ApplicationContext context;
 
     @GetMapping 
-    public ResponseEntity<Map<String, String>> getMenuItems(){
-        Map<String, String> response = new HashMap<>();
-        response.put("message", "API connected to spring");
+    public ResponseEntity<?> getMenuItems(){
+        MenuItemService repo = context.getBean(MenuItemServiceImpl.class);
+
+        var response = repo.findAll();
 
         return ResponseEntity.ok(response);
     }
