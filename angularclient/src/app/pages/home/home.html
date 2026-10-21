@@ -1,23 +1,92 @@
-<div>
-    <h2>SAMPLE TEXT</h2>
+<div class="hbody">
+    <div class="div-row">
+        <div class="gallery-container">
+            <div class="gallery-slideshow hide" [style.display]="galleryCounter === 1 ? 'block' : 'none'">
+                <div class ="gallery-image">
+                    <img src="ECT_logo.png">
+                    <div class="caption">Treat 1</div>
+                </div>
+            </div>
+            <div class="gallery-slideshow hide" [style.display]="galleryCounter === 2 ? 'block' : 'none'">
+                <div class ="gallery-image">
+                    <img src="ECT_logo.png">
+                    <div class="caption">Treat 2</div> 
+                </div>
+            </div>
+            <div class="gallery-slideshow hide" [style.display]="galleryCounter === 3 ? 'block' : 'none'">
+                <div class ="gallery-image">
+                    <img src="ECT_logo.png">
+                    <div class="caption">Treat 3</div> 
+                </div>
+            </div>
+            <div class="gallery-slideshow hide" [style.display]="galleryCounter === 4 ? 'block' : 'none'">
+                <div class ="gallery-image">
+                    <img src="ECT_logo.png">
+                    <div class="caption">Treat 4</div> 
+                </div>
+            </div>
+            <div class="gallery-slideshow hide" [style.display]="galleryCounter === 5 ? 'block' : 'none'">
+                <div class ="gallery-image">
+                    <img src="ECT_logo.png">
+                    <div class="caption">Treat 5</div> 
+                </div>
+            </div>
+            <div class="gallery-slideshow hide" [style.display]="galleryCounter === 6 ? 'block' : 'none'">
+                <div class ="gallery-image">
+                    <img src="ECT_logo.png">
+                    <div class="caption">Treat 6</div> 
+                </div>
+            </div>
+            <div class="gallery-slideshow hide" [style.display]="galleryCounter === 7 ? 'block' : 'none'">
+                <div class ="gallery-image">
+                    <img src="ECT_logo.png">
+                    <div class="caption">Treat 7</div> 
+                </div>
+            </div>
+            <div class="gallery-slideshow hide" [style.display]="galleryCounter === 8 ? 'block' : 'none'">
+                <div class ="gallery-image">
+                    <img src="ECT_logo.png">
+                    <div class="caption">Treat 8</div> 
+                </div>
+            </div>
+            <div class="gallery-slideshow hide" [style.display]="galleryCounter === 9 ? 'block' : 'none'">
+                <div class ="gallery-image">
+                    <img src="ECT_logo.png">
+                    <div class="caption">Treat 9</div> 
+                </div>
+            </div>
+            <div class="gallery-slideshow hide" [style.display]="galleryCounter === 10 ? 'block' : 'none'">
+                <div class ="gallery-image">
+                    <img src="ECT_logo.png">
+                    <div class="caption">Treat 10</div> 
+                </div>
+            </div>
+        <br>
+            <div id="counter">
+                <span class="count" [class.current]="galleryCounter === 1"></span>
+                <span class="count" [class.current]="galleryCounter === 2"></span>
+                <span class="count" [class.current]="galleryCounter === 3"></span>
+                <span class="count" [class.current]="galleryCounter === 4"></span>
+                <span class="count" [class.current]="galleryCounter === 5"></span>
+                <span class="count" [class.current]="galleryCounter === 6"></span>
+                <span class="count" [class.current]="galleryCounter === 7"></span>
+                <span class="count" [class.current]="galleryCounter === 8"></span>
+                <span class="count" [class.current]="galleryCounter === 9"></span>
+                <span class="count" [class.current]="galleryCounter === 10"></span>
+            </div>
+        </div>
+        <div>
+            <p id="motto">Embrace the sweetness of life through our handcrafted cheesecakes, custom cakes, and treats. Let us elevate your celebrations with our delicious creations that promise to leave a lasting impression.</p>
+        </div>
+    </div>
 
+<div>
     <div>
         @for (item of reviews; track item.id) {
             <h5>{{ item.reviewContent }}</h5>
         }
     </div>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
-    <h2>SAMPLE TEXT</h2>
 </div>
+</div>
+
 
