@@ -14,8 +14,9 @@ public class Review {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Column(columnDefinition = "text")
     String reviewContent;
-    @Min(value = 0, message = "Rating cannot be less than 5 stars.")
+    @Min(value = 0, message = "Rating cannot be less than 0 stars.")
     @Max(value = 5, message = "Rating cannot be higher than 5 stars.")
     int rating;
     String name;
