@@ -1,1 +1,106 @@
-<p>admin-menu-dashboard works!</p>
+<div class="menu-dash-main">
+    <div class="editor-container">
+        <div class="tab-search-row">
+            <div class="tab">
+                <button [class.active]="displayTreatType === 'mini'" (click)="filterTreatType('mini')">Minis</button>
+            </div>
+            <div class="tab">
+                <button [class.active]="displayTreatType === 'cupcake'" (click)="filterTreatType('cupcake')">Cupcakes</button>
+            </div>
+            <div class="tab">
+                <button [class.active]="displayTreatType === 'cookie'" (click)="filterTreatType('cookie')">Cookies</button>
+            </div>
+            <div class="tab">
+                <button [class.active]="displayTreatType === 'bar'" (click)="filterTreatType('bar')">Bars</button>
+            </div>
+            <div class="tab">
+                <button [class.active]="displayTreatType === 'dot'" (click)="filterTreatType('dot')">Dot Cakes</button>
+            </div>
+            <div class="search">
+                <div class="search-bar">
+                    <form (submit)="$event.preventDefault()">
+                        <input id="search"type="search" placeholder="Search..." [(ngModel)]="searchContent" (ngModelChange)="filterTreatType(displayTreatType)" name="searchQuery">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="display-container">
+            <div class="header-row">
+                <div class="select-head">
+                </div>
+                <div class="order-head">
+                    Order
+                </div>
+                <div class="name-head">
+                    Treat Name
+                </div>
+                <div class="add-head">
+                    Added to Menu
+                </div>
+                <div class="remove-head">
+                    Removed From Menu
+                </div>
+                <div class="tag-head">
+                    Treat Tags
+                </div>
+            </div>
+            <div class="menu-item-container">
+                @for(item of displayItems; track item.id) {
+                    <div class="menu-item-row">
+                        <div class="selector">
+                            <input type="radio" name="selected">
+                        </div>
+                        <div class="orderer">
+                            <select class="order" [(ngModel)]="item.menuOrder" (ngModelChange)="onChangeMenuOrder(item)">
+                                <option [ngValue]="0">Off Menu</option>
+                                @for (orderValue of menuOrderPopulate; track orderValue) {
+                                    <option [ngValue]="orderValue">
+                                        {{ orderValue }}
+                                    </option>
+                                }
+                            </select>
+                        </div>
+                        <div class="name-div">
+                            <div class="name">
+                                {{ item.itemName }}
+                            </div>
+                        </div>
+                        <div class="added-div">
+                            <div class="added">
+                                {{ item.addDate }}
+                            </div>
+                        </div>
+                        <div class="removed-div">
+                            <div class="removed">
+                                {{ item.removeDate }}
+                            </div>
+                        </div>
+                        <div class="tags-div">
+                            <div class="tags">
+                                {{ item.itemTags }}
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="button-row">
+            <div class="half">
+                <div class="crud-div">
+                    <button routerLink="/admin-add-menuitem" routerLinkActive="active">Add New Menu Item</button>
+                </div>
+                <div class="crud-div">
+                    <button routerLink="/admin-update-menuitem" routerLinkActive="active">Update Menu Item</button>
+                </div>                
+            </div>
+            <div class="half">
+                <div class="crud-div">
+                    <button>Delete Menu Item</button>
+                </div>
+                <div class="crud-div">
+                    <button>Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
