@@ -1,0 +1,58 @@
+.admin-dash-main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    height: 500px;
+}
+
+.dash-head {
+    padding: 5px;
+    font-family: "Trirong", serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.top-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+button:hover {
+    background: rgb(190, 186, 186);
+
+}
+
+button p {
+    font-family: "Trirong", serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.top-row button {
+    height: 50px;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 150px;
+}
+
+.bottom-row button {
+    height: 50px;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
