@@ -28,6 +28,10 @@
                         @if (item.treatType === 'bar') {
                             <li [style.order]="item.menuOrder">
                                 <span class="treat-name">{{ item.itemName }}</span>
+                                @if (item.itemName === 'Coffee Cake') {
+                                    <span>*</span>
+                                    <div class="coffee-cake-disclaimer">*Sunday Only; Will replace <u>one</u> bar.</div>
+                                }
                             </li>
                         }
                     }
