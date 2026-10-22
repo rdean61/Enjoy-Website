@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuitemService } from '../../services/menuitem';
 
@@ -11,10 +11,17 @@ import { MenuitemService } from '../../services/menuitem';
 export class Menu implements OnInit{
 
   public menuItems: any [] = [];
+  public lastWednesday!: Date;
+  public nextSunday!: Date;
+  public popupOpen: boolean = false;
 
-  constructor(private menuService: MenuitemService) {}
+  constructor(private menuService: MenuitemService,
+              private changeDetector: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
+
+    this.popupOpen = true;
     
     this.menuService.getMenuItems().subscribe({
 
@@ -22,6 +29,7 @@ export class Menu implements OnInit{
 
         this.menuItems = data;
         console.log('Menuitems loaded: ', data);
+        this.changeDetector.detectChanges();
 
       },
       error: (err) => {
@@ -30,6 +38,29 @@ export class Menu implements OnInit{
 
      });
 
+     this.getDays();
+
   }
+
+  private getDays(): void {
+    const today = new Date();
+    const todayDay = today.getDay();
+
+    const lastWedDate = new Date(today);
+    const dayDiff = (todayDay >= 3) ? (todayDay - 3) : (todayDay + 4);
+    lastWedDate.setDate(today.getDate() - dayDiff);
+    this.lastWednesday = lastWedDate;
+
+    const nextSunDate = new Date(today);
+    const daySum = (todayDay === 0) ? 7 :(7 - todayDay);
+    nextSunDate.setDate(today.getDate() + daySum);
+    this.nextSunday = nextSunDate;
+
+  }
+
+  public closePopup(): void {
+    this.popupOpen = false;
+  }
+
 
 }
