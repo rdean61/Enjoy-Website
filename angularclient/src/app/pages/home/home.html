@@ -75,29 +75,29 @@
                 <span class="count" [class.current]="galleryCounter === 10"></span>
             </div>
         </div>
-        <div>
+        <div class="right-column">
             <p id="motto">Embrace the sweetness of life through our handcrafted cheesecakes, custom cakes, and treats. Let us elevate your celebrations with our delicious creations that promise to leave a lasting impression.</p>
+            <div>
+                <div class="div-row" style="padding-bottom: 2%;">
+                    <div class="review-container">
+                        <h3>Check out our reviews!</h3>
+                        <div class="review-content-row hide">
+                            <p class="quote">"</p>
+                            <h5>{{ reviews[reviewCounter].reviewContent }}</h5> 
+                            <p class="quote">"</p>
+                        </div>
+                        <div class="rating-container">
+                            <div class="reviewer-container">
+                                <h6>- {{ reviews[reviewCounter].name }}</h6> 
+                            </div>
+                            <h6 class="stars">{{ getRatingStars(reviews[reviewCounter].rating) }}</h6> 
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-<div>
-    <div class="div-row" style="padding-bottom: 2%;">
-        <div class="review-container">
-            <h3>Check out our reviews!</h3>
-            <div class="review-content-row hide">
-                <p class="quote">"</p>
-                <h5>{{ reviews[reviewCounter].reviewContent }}</h5> 
-                <p class="quote">"</p>
-            </div>
-            <div class="rating-container">
-                <div class="reviewer-container">
-                    <h6>- {{ reviews[reviewCounter].name }}</h6> 
-                </div>
-                <h6 class="stars">{{ getRatingStars(reviews[reviewCounter].rating) }}</h6> 
-            </div>
-        </div>
-    </div>
-</div>
 </div>
 
 

@@ -27,7 +27,7 @@
 }
 
 .popup-container h6 {
-    font-size: 200%;
+    font-size: 150%;
 }
 
 .close-popup {
@@ -44,10 +44,6 @@
 
 .close-popup:hover {
     color: red
-}
-
-.mbody {
-    background: #F7E779;
 }
 
 .menu-header {

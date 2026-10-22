@@ -5,7 +5,6 @@
 .about-main {
     display: flex;
     flex-direction: row;
-    background: #F7E779;
 }
 
 .outer-column {
