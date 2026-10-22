@@ -32,8 +32,8 @@
 
 .close-popup {
     position: absolute;
-    top: -3%;
-    right: 1%;
+    top:    -25px;
+    right: -1px;
     background: none;
     border: none;
     font-size: 350%;
