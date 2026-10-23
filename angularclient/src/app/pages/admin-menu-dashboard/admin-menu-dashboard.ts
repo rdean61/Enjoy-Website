@@ -98,8 +98,13 @@ export class AdminMenuDashboard implements OnInit{
 
   }
   get menuOrderPopulate(): number[] {
-    const activeItems = this.displayItems.filter(item => (item.menuOrder ?? item.order) > 0).length;
-    return Array.from({ length: activeItems }, (_, i) => i + 1)
+    const activeItems = this.displayItems
+    .map(item => Number (item.menuOrder ?? item.order) || 0)
+    .filter(order => order > 0);
+
+    const menuOrderMax = activeItems.length > 0 ? Math.max(...activeItems) : 0;
+
+    return Array.from({ length: menuOrderMax + 1 }, (_, i) => i + 1)
   }
 
   public onChangeMenuOrder(item: any): void {
