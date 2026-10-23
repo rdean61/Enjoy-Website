@@ -35,7 +35,8 @@ export class Home implements OnInit, OnDestroy {
 
       next: (data) => {
 
-        this.reviews = data;
+        this.reviews = data.filter((item: any) => item.displayStatus === true);
+        this.reviewCounter = 0;
         console.log('Reviews loaded:', data);
         this.changeDetector.detectChanges();
 
