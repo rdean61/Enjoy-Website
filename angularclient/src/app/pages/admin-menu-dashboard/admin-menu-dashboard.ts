@@ -37,7 +37,10 @@ export class AdminMenuDashboard implements OnInit{
 
       next: (data) => {
 
-        this.menuItems = data;
+        this.menuItems = data.map((item: any) => ({
+          ...item,
+          ogMenuOrder: item.menuOrder
+        }));
 
         this.filterTreatType(this.displayTreatType);
 
@@ -107,8 +110,27 @@ export class AdminMenuDashboard implements OnInit{
     return Array.from({ length: menuOrderMax + 1 }, (_, i) => i + 1)
   }
 
+  public getCurrentDate(): string {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+
+  }
+
   public onChangeMenuOrder(item: any): void {
     item.menuOrder = Number(item.menuOrder);
+    const newMenuOrder = Number(item.menuOrder);
+    const oldMenuOrder = Number(item.ogMenuOrder ?? item.menuOrder);
+
+    if (oldMenuOrder === 0 && newMenuOrder > 0) {
+      item.addDate = this.getCurrentDate();
+    } else if (oldMenuOrder > 0 && newMenuOrder === 0) {
+      item.removeDate = this.getCurrentDate();
+    }
+
+    item.menuOrder = newMenuOrder;
 
     this.filterTreatType(this.displayTreatType);
   }
@@ -172,6 +194,10 @@ export class AdminMenuDashboard implements OnInit{
       });
 
       await Promise.all(changes);
+
+      this.menuItems.forEach(item => {
+        item.ogMenuOrder = item.menuOrder;
+      });
 
       window.alert('Changes saved successfully.');
 
