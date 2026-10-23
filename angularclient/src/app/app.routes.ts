@@ -11,6 +11,7 @@ import { AdminAddMenuitem } from './pages/admin-add-menuitem/admin-add-menuitem'
 import { AdminUpdateMenuitem } from './pages/admin-update-menuitem/admin-update-menuitem';
 import { AdminReportsDashboard } from './pages/admin-reports-dashboard/admin-reports-dashboard';
 import { AdminReviewsDashboard } from './pages/admin-reviews-dashboard/admin-reviews-dashboard';
+import { AdminAddReview } from './pages/admin-add-review/admin-add-review';
 
 export const routes: Routes = [
 
@@ -27,7 +28,8 @@ export const routes: Routes = [
     { path: 'admin-add-menuitem', component: AdminAddMenuitem },
     { path:'admin-update-menuitem/:id', component: AdminUpdateMenuitem },
     { path: 'admin-reports-dashboard', component: AdminReportsDashboard },
-    { path: 'admin-reviews-dashboard', component: AdminReviewsDashboard }, 
+    { path: 'admin-reviews-dashboard', component: AdminReviewsDashboard },
+    { path: 'admin-add-review', component: AdminAddReview }, 
 
     { path: '**', redirectTo: 'home'}
 ];

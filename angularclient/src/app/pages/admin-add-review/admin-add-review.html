@@ -1,0 +1,41 @@
+<div class="add-review-main">
+    <div class="form-container">
+        <form class="new-review" (ngSubmit)="onSubmit()">
+            <div class="name-container">
+                <label for="namefield">
+                    Reviewer Name:
+                </label>
+                <input type="text" id="namefield" name="namefield" [(ngModel)]="newReview.name" required>
+            </div>
+            <div class="content-container">
+                <label for="contentfield">
+                    Review Content:
+                </label>
+                <input type="text" id="contentfield" name="contentfield" [(ngModel)]="newReview.reviewContent" required>
+            </div>
+            <div class="rating-container">
+                <label for="ratingfield">
+                    Rating:
+                </label>
+                <select type="text" id="ratingfield" name="ratingfield" [(ngModel)]="newReview.rating" required>
+                    <option value="" disabled selected hidden></option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="email-container">
+                <label for="emailfield">
+                    Reviewer Email:
+                </label>
+                <input type="text" id="emailfield" name="emailfield" [(ngModel)]="newReview.email">
+            </div>
+            <div class="submit-container">
+                <button type="submit">Create Review</button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,1 +1,73 @@
-<p>admin-reviews-dashboard works!</p>
+<div class="review-dash-main">
+    <div class="editor-container">
+        <div class="display-container">
+            <div class="header-row">
+                <div class="select-head">
+
+                </div>
+                <div class="display-head">
+                    Display
+                </div>
+                <div class="name-head">
+                    Reviewer Name
+                </div>
+                <div class="content-head">
+                    Review Content
+                </div>
+                <div class="rating-head">
+                    Rating
+                </div>
+                <div class="email-head">
+                    Email Address
+                </div>
+            </div>
+            <div class="review-item-container">
+                @for(item of reviews; track item.id) {
+                    <div class="review-item-row">
+                        <div class="selector">
+                            <input type="radio" name="selectedReview" [(ngModel)]="selectedReview" [value]="item">
+                        </div>
+                        <div class="displayer">
+                            <div class="display">
+                                <input type="checkbox" [(ngModel)]="item.displayStatus">
+                            </div>
+                        </div>
+                        <div class="name-div">
+                            <div class="name">
+                                {{ item.name }}
+                            </div>
+                        </div>
+                        <div class="content-div">
+                            <div class="content">
+                                {{ item.reviewContent }}
+                            </div>
+                        </div>
+                        <div class="rating-div">
+                            <div class="rating">
+                                {{ item.rating }}
+                            </div>
+                        </div>
+                        <div class="email-div">
+                            <div class="email">
+                                {{ item.email }}
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="button-row">
+            <div class="half">
+                <div class="crud-div">
+                    <button routerLink="/admin-add-review" routerLinkActive="active">Add New Review</button>
+                </div>
+                <div class="crud-div">
+                    <button type="button" (click)="onDeleteReview()">Delete Review</button>
+                </div>
+                <div class="crud-div">
+                    <button (click)="onSaveChanges()">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

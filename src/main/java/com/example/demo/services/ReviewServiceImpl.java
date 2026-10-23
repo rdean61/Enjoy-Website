@@ -31,8 +31,8 @@ public class ReviewServiceImpl implements ReviewService{
     }
 
     @Override 
-    public Review findById(int theId) {
-        Long longId = (long)theId;
+    public Review findById(Long id) {
+        Long longId = (long)id;
         Optional<Review> result = reviewRepository.findById(longId);
 
         Review theReview = null;
@@ -40,7 +40,7 @@ public class ReviewServiceImpl implements ReviewService{
         if (result.isPresent()) {
             theReview = result.get();
         } else {
-            throw new RuntimeException("Review with ID " + theId + " not found.");
+            throw new RuntimeException("Review with ID " + id + " not found.");
         }
 
         return theReview;
@@ -52,8 +52,8 @@ public class ReviewServiceImpl implements ReviewService{
     }
 
     @Override 
-    public void deleteById(int theId) {
-        Long longId = (long)theId;
+    public void deleteById(Long id) {
+        Long longId = (long)id;
         reviewRepository.deleteById(longId);
     }
 }
