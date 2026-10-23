@@ -25,7 +25,7 @@ export const routes: Routes = [
     { path:'admin-dashboard', component: AdminDashboard },
     { path: 'admin-menu-dashboard', component: AdminMenuDashboard },
     { path: 'admin-add-menuitem', component: AdminAddMenuitem },
-    { path:'admin-update-menuitem', component: AdminUpdateMenuitem },
+    { path:'admin-update-menuitem/:id', component: AdminUpdateMenuitem },
     { path: 'admin-reports-dashboard', component: AdminReportsDashboard },
     { path: 'admin-reviews-dashboard', component: AdminReviewsDashboard }, 
 

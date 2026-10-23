@@ -3,7 +3,6 @@ package com.example.demo.bootstrap;
 import com.example.demo.dao.*;
 import com.example.demo.entities.*;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 

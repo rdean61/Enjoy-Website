@@ -1,8 +1,8 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuitemService } from '../../services/menuitem';
 import { FormsModule } from '@angular/forms';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 
 @Component({
@@ -12,6 +12,8 @@ import { firstValueFrom } from 'rxjs';
   templateUrl: './admin-menu-dashboard.html',
 })
 export class AdminMenuDashboard implements OnInit{
+
+  private router = inject(Router);
 
   public menuItems: any[] = [];
 
@@ -176,5 +178,13 @@ export class AdminMenuDashboard implements OnInit{
     }
   }
 
+  public redirectUpdate(): void {
+    if (!this.selectedMenuItem) {
+      alert('A Menu Item must first be selected.');
+      return;
+    }
 
+    const itemId = this.selectedMenuItem.id || this.selectedMenuItem._id;
+    this.router.navigate(['/admin-update-menuitem', itemId]);
+  }
 }
