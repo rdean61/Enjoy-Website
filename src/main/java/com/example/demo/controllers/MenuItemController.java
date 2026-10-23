@@ -28,20 +28,26 @@ public class MenuItemController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/deleteMenuItem")
-    public String deleteMenuItem(@Valid @RequestParam("id") int theId, Model theModel) {
-        MenuItemService repo = context.getBean(MenuItemServiceImpl.class);
-        MenuItem menuItem = repo.findById(theId);
-        if(menuItem.getMenuOrder() > 0){
-            repo.deleteById(theId);
-            return "confirmationdeletemenuitem";
-        } else {
-            return "negativeerror";
+    @DeleteMapping("/deleteMenuItem/{id}")
+    public ResponseEntity<?> deleteMenuItem(@PathVariable("id") Long id) {
+        try {
+            MenuItemService repo = context.getBean(MenuItemServiceImpl.class);
+            MenuItem menuItem = repo.findById(id);
+
+            if(menuItem != null) {
+                repo.deleteById(id);
+                return ResponseEntity.ok().body("Deleted Successfully");
+            } else {
+                return ResponseEntity.ok().body("Cannot be deleted.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().body("Error: " + e.getMessage());
         }
     }
 
     @PutMapping("/updateMenuItem/{id}")
-    public ResponseEntity<?> updateMenuItem(@PathVariable int id, @Valid @RequestBody MenuItem updatedItem) {
+    public ResponseEntity<?> updateMenuItem(@PathVariable Long id, @Valid @RequestBody MenuItem updatedItem) {
         MenuItemService repo = context.getBean(MenuItemServiceImpl.class);
 
         MenuItem backendItem = repo.findById(id);
@@ -67,6 +73,17 @@ public class MenuItemController {
         repo.save(backendItem);
 
         return ResponseEntity.ok(backendItem);
+    }
+
+    @PostMapping("/createMenuItem")
+    public ResponseEntity<?> createMenuItem(@Valid @RequestBody MenuItem newMenuItem) {
+        MenuItemService repo = context.getBean(MenuItemServiceImpl.class);
+
+        newMenuItem.setId(null);
+
+        repo.save(newMenuItem);
+
+        return ResponseEntity.ok(newMenuItem);
     }
 
 }

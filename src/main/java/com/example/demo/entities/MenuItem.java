@@ -11,7 +11,7 @@ import java.time.LocalDate;
 public class MenuItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    Long id;
     String itemName;
     @Column(name = "AddDate", columnDefinition = "DATE")
     LocalDate addDate;
@@ -22,6 +22,13 @@ public class MenuItem {
     int menuOrder;
 
     public MenuItem() {
+    }
+
+    public MenuItem(String itemName, String treatType, String itemTags) {
+        this.itemName = itemName;
+        this.treatType = treatType;
+        this.itemTags = itemTags;
+        this.menuOrder = 0;
     }
 
     public MenuItem(String itemName, LocalDate addDate, LocalDate removeDate, String treatType, String itemTags, int menuOrder){
@@ -47,7 +54,7 @@ public class MenuItem {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

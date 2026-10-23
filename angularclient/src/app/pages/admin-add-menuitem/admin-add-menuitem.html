@@ -1,1 +1,28 @@
-<p>admin-add-menuitem works!</p>
+<div class="add-item-main">
+    <div class="form-container">
+        <form class="new-menu-item" (ngSubmit)="onSubmit()">
+            <div class="name-container">
+                <label for="namefield">Treat Name:</label>
+                <input type="text" id="namefield" name="namefield" [(ngModel)]="newMenuItem.itemName" required>
+            </div>
+            <div class="type-container">
+                <label for="typefield">Treat Type:</label>
+                <select type="text" id="typefield" name="typefield" [(ngModel)]="newMenuItem.treatType" required>
+                    <option value="" disabled selected hidden></option>
+                    <option value="mini">Mini Cheesecake</option>
+                    <option value="cupcake">Cupcake</option>
+                    <option value="cookie">Cookie</option>
+                    <option value="bar">Bar</option>
+                    <option value="dot">Dot Cake</option>
+                </select>
+            </div>
+            <div class="tags-container">
+                <label for="tagfield">Treat Tags:</label>
+                <input type="text" id="tagfield" name="tagfield" [(ngModel)]="newMenuItem.itemTags" required placeholder="Classic, Main, Chocolate, Fruit, Fall, Christmas, etc.">
+            </div>
+            <div class="submit-container">
+                <button type="submit">Create Item</button>
+            </div>
+        </form>
+    </div>
+</div>

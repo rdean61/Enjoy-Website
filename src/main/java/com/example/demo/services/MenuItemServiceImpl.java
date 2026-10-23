@@ -1,6 +1,9 @@
 package com.example.demo.services;
 
 import com.example.demo.entities.MenuItem;
+
+import jakarta.transaction.Transactional;
+
 import com.example.demo.dao.MenuItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,8 +33,8 @@ public class MenuItemServiceImpl implements MenuItemService {
     }
 
     @Override 
-    public MenuItem findById(int theId) {
-        Long longId = (long)theId;
+    public MenuItem findById(Long id) {
+        Long longId = id;
         Optional<MenuItem> result = menuItemRepository.findById(longId);
 
         MenuItem theMenuItem = null;
@@ -39,7 +42,7 @@ public class MenuItemServiceImpl implements MenuItemService {
         if(result.isPresent()) {
             theMenuItem = result.get();
         } else {
-            throw new RuntimeException("MenuItem id "+ theId + " not found.");
+            throw new RuntimeException("MenuItem id "+ id + " not found.");
         }
 
         return theMenuItem;
@@ -50,9 +53,10 @@ public class MenuItemServiceImpl implements MenuItemService {
         menuItemRepository.save(theMenuItem);
     }
 
+    @Transactional 
     @Override 
-    public void deleteById(int theId) {
-        Long longId = (long)theId;
+    public void deleteById(Long id) {
+        Long longId = id;
         menuItemRepository.deleteById(longId);
     }
 

@@ -3,8 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MenuitemService } from '../../services/menuitem';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { getIndexerTemplateIdentifiers } from '@angular/compiler';
-import { first, firstValueFrom } from 'rxjs';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   imports: [CommonModule, FormsModule, RouterLink, RouterLinkActive],
@@ -23,6 +22,8 @@ export class AdminMenuDashboard implements OnInit{
   public searchContent: string = '';
 
   public deletedIds: string[] =[];
+
+  public selectedMenuItem: any = null;
 
   constructor(private menuitemService: MenuitemService,
               private changeDetectorRef: ChangeDetectorRef
@@ -109,28 +110,37 @@ export class AdminMenuDashboard implements OnInit{
 
     const selectedMenuItem = this.displayItems.find(item => item.selected);
 
-    if (!selectedMenuItem) {
+    if (!this.selectedMenuItem) {
       alert('No item selected.');
       return;
     }
 
-    const deleteConfirmation = window.confirm(`You are about to delete "${selectedMenuItem.itemName || selectedMenuItem.name}". Do you wish to proceed?`);
+    const deleteConfirmation = window.confirm(`You are about to delete "${this.selectedMenuItem.itemName || this.selectedMenuItem.name}". Do you wish to proceed?`);
 
     if (deleteConfirmation) {
-      const itemId = selectedMenuItem.id || selectedMenuItem._id;
+      const itemId = this.selectedMenuItem.id || this.selectedMenuItem._id;
 
-      if (!this.deletedIds.includes(itemId)) {
-        this.deletedIds.push(itemId);
-      }
+      this.menuitemService.deleteMenuItem(itemId).subscribe({
+        next: () => {
 
-      this.menuItems = this.menuItems.filter(item => (item.id || item._id) !== itemId);
+            console.log('deleted from db');
 
-      this.filterTreatType(this.displayTreatType);
-      this.changeDetectorRef.detectChanges();
+          if (!this.deletedIds.includes(itemId)) {
+            this.deletedIds.push(itemId);
+          }
 
-      console.log('Menu Item deleted on frontend.');
-        
-    }
+          this.menuItems = this.menuItems.filter(item => (item.id || item._id) !== itemId);
+
+          this.filterTreatType(this.displayTreatType);
+          this.changeDetectorRef.detectChanges();
+          this.selectedMenuItem = null;
+
+          console.log('Menu Item deleted on frontend.');
+        }, error: (err) => {
+          console.error('Error deleting from database.', err);
+        }
+    });
+  }
   }
   
   private menuOrderChanges(): boolean {

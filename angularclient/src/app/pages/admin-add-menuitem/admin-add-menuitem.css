@@ -1,0 +1,76 @@
+.add-item-main {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Trirong", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+}
+
+.form-container {
+    width: 60%;
+    background: lightgoldenrodyellow;
+    outline: 1px solid black;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.new-menu-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.name-container {
+    width:60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 50px;
+}
+
+#namefield {
+    width: 200px;
+}
+
+.type-container {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    height: 50px;
+}
+
+#typefield {
+    width: 200px;
+}
+
+.tag-container {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+#tagfield {
+    margin-left: 10px;
+    width: 500px;
+    height: 35px;
+}
+
