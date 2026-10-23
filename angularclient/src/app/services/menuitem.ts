@@ -18,4 +18,15 @@ export class MenuitemService {
     public getMenuItems(): Observable<any[]> {
         return this.http.get<any[]>(this.apiServerPath);
     }
+
+    public deleteMenuItem(id: any): Observable<any> {
+        return this.http.get(`${this.apiServerPath}/deleteMenuItem`, {
+            params: { id: id},
+            responseType: 'text'
+        });
+    }
+
+    public updateMenuItem(id: any, data: any): Observable<any> {
+        return this.http.put(`${this.apiServerPath}/updateMenuItem/${id}`, data);
+    }
 }

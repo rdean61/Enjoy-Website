@@ -29,7 +29,7 @@ public class MenuItemController {
     }
 
     @GetMapping("/deleteMenuItem")
-    public String deletePart(@Valid @RequestParam("id") int theId, Model theModel) {
+    public String deleteMenuItem(@Valid @RequestParam("id") int theId, Model theModel) {
         MenuItemService repo = context.getBean(MenuItemServiceImpl.class);
         MenuItem menuItem = repo.findById(theId);
         if(menuItem.getMenuOrder() > 0){
@@ -38,6 +38,35 @@ public class MenuItemController {
         } else {
             return "negativeerror";
         }
+    }
+
+    @PutMapping("/updateMenuItem/{id}")
+    public ResponseEntity<?> updateMenuItem(@PathVariable int id, @Valid @RequestBody MenuItem updatedItem) {
+        MenuItemService repo = context.getBean(MenuItemServiceImpl.class);
+
+        MenuItem backendItem = repo.findById(id);
+
+        if (backendItem == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        backendItem.setMenuOrder(updatedItem.getMenuOrder());
+
+        if (updatedItem.getItemTags() != null) {
+            backendItem.setItemTags(updatedItem.getItemTags());
+        }
+
+        if (updatedItem.getRemoveDate() != null) {
+            backendItem.setRemoveDate(updatedItem.getRemoveDate());
+        }
+
+        if (updatedItem.getAddDate() != null) {
+            backendItem.setAddDate(updatedItem.getAddDate());
+        }
+
+        repo.save(backendItem);
+
+        return ResponseEntity.ok(backendItem);
     }
 
 }

@@ -48,7 +48,7 @@
                 @for(item of displayItems; track item.id) {
                     <div class="menu-item-row">
                         <div class="selector">
-                            <input type="radio" name="selected">
+                            <input type="radio" name="selectedMenuItem" [(ngModel)]="item.selected" [value]="true">
                         </div>
                         <div class="orderer">
                             <select class="order" [(ngModel)]="item.menuOrder" (ngModelChange)="onChangeMenuOrder(item)">
@@ -90,15 +90,15 @@
                     <button routerLink="/admin-add-menuitem" routerLinkActive="active">Add New Menu Item</button>
                 </div>
                 <div class="crud-div">
-                    <button routerLink="/admin-update-menuitem" routerLinkActive="active">Update Menu Item</button>
+                    <button routerLink="/admin-update-menuitem" routerLinkActive="active">Update Item Tags</button>
                 </div>                
             </div>
             <div class="half">
                 <div class="crud-div">
-                    <button>Delete Menu Item</button>
+                    <button type="button" (click)="onDeleteMenuItem()">Delete Menu Item</button>
                 </div>
                 <div class="crud-div">
-                    <button>Save Changes</button>
+                    <button (click)="onSaveChanges()">Save Changes</button>
                 </div>
             </div>
         </div>

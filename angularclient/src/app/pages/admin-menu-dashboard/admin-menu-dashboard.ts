@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MenuitemService } from '../../services/menuitem';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { getIndexerTemplateIdentifiers } from '@angular/compiler';
+import { first, firstValueFrom } from 'rxjs';
 
 @Component({
   imports: [CommonModule, FormsModule, RouterLink, RouterLinkActive],
@@ -19,6 +21,8 @@ export class AdminMenuDashboard implements OnInit{
   public displayTreatType: string = 'mini';
 
   public searchContent: string = '';
+
+  public deletedIds: string[] =[];
 
   constructor(private menuitemService: MenuitemService,
               private changeDetectorRef: ChangeDetectorRef
@@ -100,5 +104,67 @@ export class AdminMenuDashboard implements OnInit{
 
     this.filterTreatType(this.displayTreatType);
   }
+
+  public onDeleteMenuItem(): void {
+
+    const selectedMenuItem = this.displayItems.find(item => item.selected);
+
+    if (!selectedMenuItem) {
+      alert('No item selected.');
+      return;
+    }
+
+    const deleteConfirmation = window.confirm(`You are about to delete "${selectedMenuItem.itemName || selectedMenuItem.name}". Do you wish to proceed?`);
+
+    if (deleteConfirmation) {
+      const itemId = selectedMenuItem.id || selectedMenuItem._id;
+
+      if (!this.deletedIds.includes(itemId)) {
+        this.deletedIds.push(itemId);
+      }
+
+      this.menuItems = this.menuItems.filter(item => (item.id || item._id) !== itemId);
+
+      this.filterTreatType(this.displayTreatType);
+      this.changeDetectorRef.detectChanges();
+
+      console.log('Menu Item deleted on frontend.');
+        
+    }
+  }
+  
+  private menuOrderChanges(): boolean {
+    return true;
+  }
+
+  public async onSaveChanges(): Promise<void> {
+    if (this.deletedIds.length === 0 && !this.menuOrderChanges()) {
+      return;
+    }
+
+    try {
+      const changes: Promise<any>[] = [];
+
+      this.deletedIds.forEach(itemId => {
+        const delete$ = this.menuitemService.deleteMenuItem(itemId);
+        changes.push(firstValueFrom(delete$));
+      });
+
+      this.menuItems.forEach(item => {
+        const itemId = item.id || item._id;
+        const update$ = this.menuitemService.updateMenuItem(itemId, item);
+        changes.push(firstValueFrom(update$));
+      });
+
+      await Promise.all(changes);
+
+      window.alert('Changes saved successfully.');
+
+      this.deletedIds = [];
+    } catch (error) {
+      console.error('Error saving database changes', error);
+    }
+  }
+
 
 }
