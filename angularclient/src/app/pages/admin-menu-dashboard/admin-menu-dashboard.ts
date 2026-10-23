@@ -150,17 +150,15 @@ export class AdminMenuDashboard implements OnInit{
   }
 
   public async onSaveChanges(): Promise<void> {
-    if (this.deletedIds.length === 0 && !this.menuOrderChanges()) {
+    
+    const orderChanges = this.menuOrderChanges();
+
+    if (!orderChanges) {
       return;
     }
 
     try {
       const changes: Promise<any>[] = [];
-
-      this.deletedIds.forEach(itemId => {
-        const delete$ = this.menuitemService.deleteMenuItem(itemId);
-        changes.push(firstValueFrom(delete$));
-      });
 
       this.menuItems.forEach(item => {
         const itemId = item.id || item._id;

@@ -100,17 +100,12 @@ export class AdminReviewsDashboard implements OnInit {
   public async onSaveChanges(): Promise<void> {
     const changedStatuses = this.getDisplayStatusChanges();
 
-    if (this.deletedIds.length === 0 && !this.getDisplayStatusChanges()) {
+    if (changedStatuses.length === 0 ) {
       return;
     }
 
     try {
       const changes: Promise<any>[] = [];
-
-      this.deletedIds.forEach(itemId => {
-        const delete$ = this.reviewService.deleteReview(itemId);
-        changes.push(firstValueFrom(delete$));
-      });
 
       changedStatuses.forEach(item => {
         const itemId = item.id || item._id;
