@@ -2,17 +2,22 @@
     <div class="login-container">
             <div class="login-menu">
                 <div class="form-container">
-                    <form class="admin-login">
+                    <form class="admin-login" (ngSubmit)="onLogin()">
                         <div class="user-container">
                             <label for="admin-user">Username:</label>
-                            <input id="admin-user" name="admin-user" type="text" required>
+                            <input id="admin-user" name="admin-user" type="text" [(ngModel)]="username" required>
                         </div>
                         <div class="pass-container">
                             <label for="admin-pass">Password:</label>
-                            <input id="admin-pass" name="admin-pass" type="text" required>
+                            <input id="admin-pass" name="admin-pass" type="password" [(ngModel)]="password" required>
                         </div>
+                        @if (errorMessage) {
+                            <div class="error-message">{{ errorMessage }}</div>
+                        }
                         <div class="submit-container">
-                            <button type="submit">Log In</button>
+                            <button type="submit" [disabled]="isLoading">
+                                {{ isLoading ? 'Logging In...' : 'Log In' }}
+                            </button>
                         </div>
                     </form>
                 </div>

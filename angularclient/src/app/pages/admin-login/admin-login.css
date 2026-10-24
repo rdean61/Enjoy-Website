@@ -52,3 +52,7 @@
 label {
     padding-right: 10px;
 }
+
+.error-message {
+    color: red;
+}

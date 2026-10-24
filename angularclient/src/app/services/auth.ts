@@ -9,7 +9,7 @@ import { environment } from '../../environments/environment.development';
 
 export class AuthService {
 
-    private apiServerPath = `${environment.apiUrl}/login`;
+    private apiServerPath = `${environment.apiUrl}/auth/login`;
 
     constructor(private http: HttpClient) {}
 
