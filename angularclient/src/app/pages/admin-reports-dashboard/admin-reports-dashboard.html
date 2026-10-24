@@ -1,1 +1,58 @@
-<p>admin-reports-dashboard works!</p>
+<div class="reports-dash-main">
+    <div class="reports-container">
+        <div class="header-bar">
+            <h2>Menu Item Reports Overview</h2>
+        </div>
+        <div class="display-container">
+            <div class="time-container">
+                <h3>Menu Items By Time on Menu</h3>               
+                <div class="graph-container">
+                    @for (item of getDurationData(); track $index) {
+                        <div class="bar-row">
+                            <span class="row-label" [title]="item.name">{{ item.name }}</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" [style.width.%]="Math.max((item.days / getEndDays()) * 100, 8)">
+                                    @if (item.isActive) {
+                                        Active ({{ item.days }} days)
+                                    } @else {
+                                        {{ item.days }} days
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="time-container">
+                <h3>Treat Types By Average Time on Menu</h3>
+                <div class="graph-container">
+                    @for (item of getTreatTypeAvg(); track $index) {
+                        <div class="bar-row">
+                            <span class="row-label" [title]="item.name">{{ item.name }}</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" [style.width.%]="Math.max((item.days / getEndDays()) * 100, 8)">
+                                    {{ item.days }} days average
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="time-container">
+                <h3>Treat Tags By Average Time on Menu</h3>
+                <div class="graph-container">
+                     @for (item of getTagAvg(); track $index) {
+                        <div class="bar-row">
+                            <span class="row-label" [title]="item.name">{{ item.name }}</span>
+                            <div class="bar-container">
+                                <div class="bar-fill" [style.width.%]="Math.max((item.days / getEndDays()) * 100, 8)">
+                                    {{ item.days }} days average
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
