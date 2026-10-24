@@ -1,7 +1,6 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
 import { Menu } from './pages/menu/menu';
-import { Review } from './pages/review/review';
 import { Gallery } from './pages/gallery/gallery';
 import { About } from './pages/about/about';
 import { AdminLogin } from './pages/admin-login/admin-login';
@@ -20,7 +19,6 @@ export const routes: Routes = [
 
     { path:'home', component: Home },
     { path: 'menu', component: Menu },
-    { path: 'review', component: Review },
     { path:'gallery', component: Gallery },
     { path: 'about', component: About },
     { path: 'admin-login', component: AdminLogin },
