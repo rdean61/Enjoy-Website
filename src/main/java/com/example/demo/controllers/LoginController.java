@@ -31,7 +31,7 @@ public class LoginController {
         String username = credentials.get("username");
         String password = credentials.get("password");
 
-        Optional<User> userOpt = userRepository.findByUser(username);
+        Optional<User> userOpt = userRepository.findByUsername(username);
         if (userOpt.isEmpty()) {
             return ResponseEntity.status(401).body(Map.of("message", "Invalid login credentials."));    
         }
