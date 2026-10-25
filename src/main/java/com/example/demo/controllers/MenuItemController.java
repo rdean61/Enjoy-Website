@@ -11,7 +11,10 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/menu-items")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = { 
+    "http://localhost:4200",
+    "https://www.enjoycheesecakes.com",
+    "https://enjoycheesecakes.com"})
 public class MenuItemController {
     @Autowired
     private ApplicationContext context;

@@ -12,7 +12,10 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/reviews")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = { 
+    "http://localhost:4200",
+    "https://www.enjoycheesecakes.com",
+    "https://enjoycheesecakes.com"})
 public class ReviewController {
     @Autowired
     private ApplicationContext context;
