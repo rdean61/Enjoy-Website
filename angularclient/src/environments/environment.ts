@@ -1,6 +1,6 @@
 export const environment = {
 
     production: true,
-    apiUrl: 'https://api.enjoycheesecakes.com'
+    apiUrl: 'https://api.enjoycheesecakes.com/api'
     
 };
