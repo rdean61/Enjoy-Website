@@ -40,13 +40,18 @@
     width: 100%;
     height: 5%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .header-bar h2 {
     text-decoration: underline;
+}
+
+.header-bar h3 {
+    text-decoration: underline;
+    font-size: 15px;
 }
 
 .time-container {

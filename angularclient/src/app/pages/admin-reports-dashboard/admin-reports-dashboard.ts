@@ -15,6 +15,7 @@ export class AdminReportsDashboard implements OnInit{
   public menuItems: any [] = [];
   public reviews: any [] = [];
   public durationData: any[] = [];
+  public todayDate: Date = new Date();
 
   public Math = Math;
 
