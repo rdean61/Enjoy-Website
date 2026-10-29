@@ -31,3 +31,5 @@ build/
 
 ### VS Code ###
 .vscode/
+src/test/java/com/example/demo/controllers/LoginControllerTest.java
+src/test/java/com/example/demo/entities/MenuItemTest.java

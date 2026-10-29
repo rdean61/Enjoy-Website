@@ -106,10 +106,6 @@ public class MenuItem {
         this.menuOrder = menuOrder;
     }
 
-    public String toString() {
-        return this.itemName;
-    }
-
     @Override
     public boolean equals (Object o) {
         if (this == o) return true;
