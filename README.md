@@ -3,7 +3,7 @@
 My application is a web application serving as the primary website for a local business which produces baked desserts, specializing in cheesecakes.
 
 ## APPLICATION DETAILS
-The app utilizes a Spring Boot and Java backend, which also means the use of Maven to build the backend. Additionally, a PostgreSQL database is utilized for the storage of created entities relating to what is displayed on the website, but also the secure login credentials to the admin functionalities. 
+The app utilizes a Spring Boot and Java backend, which also means the use of Maven to build the backend. Additionally, a PostgreSQL database is utilized for the storage of created entities relating to what is displayed on the website, but also the secure login credentials to the admin functionalities. The frontend is built with Angular and base HTML and CSS. Many scripts are written for functionality of various pages, all of which are written using TypeScript.
 
 ## CRUD OPERATIONS
 The application has built in functionalities to Create, Delete, and Edit items within the database relating to menu items and reviews. However, these items are locked behind the admin permissions.
