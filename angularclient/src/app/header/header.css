@@ -41,6 +41,29 @@ header nav a {
     font-style: normal;
 }
 
+.holiday {
+    text-align: center;
+    color: #511f16 !important;
+}
+
+.holiday:hover {
+    font-size:0;
+}
+
+.holiday:hover::after {
+    font-size: clamp(2.2rem, 2.4vw, 2.6rem);
+    content:"🦃🦃";
+}
+
+.holiday.active{
+    font-size: 0;
+}
+
+.holiday.active::after{
+    content:"🦃🦃";
+    font-size: clamp(2.2rem, 2.4vw, 2.6rem);
+}
+
 header nav a.active {
     border-bottom: 2px solid black;
     pointer-events: none;
@@ -63,7 +86,6 @@ header h1 {
 header nav {
     margin: 0;
     display: flex;
-    padding-left: 20px;
     align-items: center;
     gap: 25px;
     font-size: clamp(1.2rem, 1.4vw, 1.6rem);
