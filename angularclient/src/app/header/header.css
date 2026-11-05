@@ -47,21 +47,7 @@ header nav a {
 }
 
 .holiday:hover {
-    font-size:0;
-}
-
-.holiday:hover::after {
-    font-size: clamp(2.2rem, 2.4vw, 2.6rem);
-    content:"🦃🦃";
-}
-
-.holiday.active{
-    font-size: 0;
-}
-
-.holiday.active::after{
-    content:"🦃🦃";
-    font-size: clamp(2.2rem, 2.4vw, 2.6rem);
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>🦃</text></svg>") 0 0, auto !important;
 }
 
 header nav a.active {
