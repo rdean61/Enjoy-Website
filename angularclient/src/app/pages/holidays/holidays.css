@@ -1,0 +1,141 @@
+.popup-main {
+    position: fixed;
+    top: 25%;
+    left: 32.5%;
+    width: 35%;
+    height: 50%;
+    background: palevioletred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.popup-container {
+    margin-top: 1%;
+    margin-bottom: 10%;
+    height: 80%;
+    text-align: center;
+    font-family: "Trirong", serif;
+    font-weight: 600;
+    font-style: normal;
+    padding: 2%;
+    width: 97%;
+    
+}
+
+.popup-container h6 {
+    font-size: 150%;
+}
+
+.close-popup {
+    position: absolute;
+    top:    -25px;
+    right: -1px;
+    background: none;
+    border: none;
+    font-size: 350%;
+    font-weight: bold;
+    cursor: pointer;
+    color: lightgray;
+}
+
+.close-popup:hover {
+    color: red
+}
+
+.menu-header {
+    padding-top: 30px;
+    text-align: center;
+    font-family: "Trirong", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.menu-header h3 {
+    font-size: 300%;
+    text-decoration: underline;
+}
+
+.over-text {
+    justify-items: center;
+}
+
+.over-text h6 {
+    text-align: center;
+    width: 100%;
+    font-family: "Trirong", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 150%;
+    color: rgb(105, 189, 105);
+    border-radius: 10px;
+}
+
+.over-text h6 a {
+    color: rgb(105, 189, 105);
+}
+
+.menu-div {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.menu-column{
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h5 {
+    padding-top: 30px;
+    text-align: center;
+    font-family: "Trirong", serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 250%;
+    text-decoration: underline;
+}
+
+.treat-container {
+    align-items: center;
+    height: 150%;
+}
+
+.treat-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+.menu-column li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-family: "Trirong", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 200%;
+}
+
+.undertext-div {
+    padding-top: 3%;
+    padding-bottom: .5%;
+    text-align: center;
+    font-family: "Trirong", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.undertext-div h4 a  {
+    color: black;
+    text-decoration: underline;
+}
