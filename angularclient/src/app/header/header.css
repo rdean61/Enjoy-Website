@@ -1,16 +1,31 @@
+:host {
+    display: block;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
 header {
     background: #fdf4df;
-    text-align: left;
-    width: auto;
-    justify-content: left;
+    width: 100vw;
+    justify-content: space-between;
     display: flex;
     align-items: center;
     outline: 2px solid black;
-    padding-left: 20px;
+    padding: 5px 30px;
     top: 0;
     position: sticky;
     z-index: 1000;
-    height: 100px;
+    box-sizing: border-box;
+}
+
+.left-justify {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
 header a.active {
@@ -37,30 +52,30 @@ header nav a:hover {
 }
 
 header h1 {
-    margin-left: 2%;
-    margin-right: 2%;
+    font-size: clamp(1.8rem, 2.2vw, 2.6rem);
+    margin: 0 15px;
     font-family: "Trirong", serif;
     font-weight: 500;
     font-style: normal;
+    white-space: nowrap;
 }
 
 header nav {
-    margin-right: auto;
+    margin: 0;
     display: flex;
-    flex: auto;
+    padding-left: 20px;
     align-items: center;
-    justify-content: flex-start;
-    gap: 5%;
-    font-size: 150%;
+    gap: 25px;
+    font-size: clamp(1.2rem, 1.4vw, 1.6rem);
 }
 
 header ul {
     display: flex;
     align-items: center;
-    flex: 0 0 auto;
-    justify-items: left;
-    margin-right: 1%;
-    gap: 20%;
+    list-style-type: none;
+    gap: 15px;
+    margin: 0;
+    padding: 0;
     flex-direction: row-reverse;
     
 }
