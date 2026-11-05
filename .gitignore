@@ -33,5 +33,3 @@ build/
 .vscode/
 src/test/java/com/example/demo/controllers/LoginControllerTest.java
 src/test/java/com/example/demo/entities/MenuItemTest.java
-angularclient/src/environments/environment.development.ts
-src/main/resources/application.properties
