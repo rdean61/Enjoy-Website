@@ -49,11 +49,6 @@
     text-decoration: underline;
 }
 
-.header-bar h3 {
-    text-decoration: underline;
-    font-size: 15px;
-}
-
 .time-container {
     display: flex;
     flex-direction: column;
