@@ -7,6 +7,7 @@ footer {
     align-items: stretch;
     padding: 20px;
     box-sizing: border-box;
+    flex-wrap: wrap;
 }
 
 footer h3 {
@@ -28,6 +29,7 @@ footer iframe {
     flex: 1;
     margin: 0 10px;
     box-sizing: border-box;
+    flex-wrap: flex;
 }
 
 .foot a, .foot p {
