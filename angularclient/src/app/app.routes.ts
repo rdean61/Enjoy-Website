@@ -11,6 +11,7 @@ import { AdminUpdateMenuitem } from './pages/admin-update-menuitem/admin-update-
 import { AdminReportsDashboard } from './pages/admin-reports-dashboard/admin-reports-dashboard';
 import { AdminReviewsDashboard } from './pages/admin-reviews-dashboard/admin-reviews-dashboard';
 import { AdminAddReview } from './pages/admin-add-review/admin-add-review';
+import { Holidays } from './pages/holidays/holidays'
 import { authGuard } from './auth-guard';
 
 export const routes: Routes = [
@@ -21,6 +22,7 @@ export const routes: Routes = [
     { path: 'menu', component: Menu },
     { path:'gallery', component: Gallery },
     { path: 'about', component: About },
+    { path: 'holidays', component: Holidays},
     { path: 'admin-login', component: AdminLogin },
     { path:'admin-dashboard', component: AdminDashboard, canActivate: [authGuard] },
     { path: 'admin-menu-dashboard', component: AdminMenuDashboard, canActivate: [authGuard]  },
