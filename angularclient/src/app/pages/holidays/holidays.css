@@ -61,6 +61,7 @@
 
 .over-text {
     justify-items: center;
+    padding-top: 30px;
 }
 
 .over-text h6 {
@@ -70,12 +71,13 @@
     font-weight: 600;
     font-style: normal;
     font-size: 150%;
-    color: rgb(105, 189, 105);
     border-radius: 10px;
+    padding-top: 5px;
 }
 
-.over-text h6 a {
-    color: rgb(105, 189, 105);
+.dates {
+    text-decoration: underline;
+    font-weight: 700;
 }
 
 .menu-div {

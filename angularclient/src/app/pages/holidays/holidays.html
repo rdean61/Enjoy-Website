@@ -1,30 +1,20 @@
 <div class="mbody">
     <div class="menu-header">
-        <h3 class="menu-title">Menu for Week of Thanksgiving</h3>
+        <h3 class="menu-title">Thanksgiving Menu</h3>
     </div>
     <div class="over-text">
-        <h6>Check us out on <a href="https://www.ubereats.com/store/enjoy-cheesecakes-and-treats-llc/">Uber Eats!</a></h6>
+        <h6>We will be accepting pre-orders through <span class="dates">Saturday, November 21st</span> for all menu items.</h6>
+        <h6>Special orders can be placed for pickup on <span class="dates">Wednesday, 11/25.</span></h6>
+        <h6>We book quickly, get your order in soon!</h6>
     </div>
     <div class="menu-div">
         <ul class="menu-column">
             <div class="treat-container">
                 <h5>Bars</h5>
                 <ul class="treat-list">
-                    @for(item of menuItems.filter(i => i.itemTags && i.itemTags.includes('TG')); track item.id) {
+                    @for(item of menuItems.filter(i => i.itemTags && i.itemTags.includes('TG')).slice().sort((a, b) => (a.menuOrder === 0 ? 1 : b.menuOrder === 0 ? -1 : a.menuOrder - b.menuOrder)); track item.id) {                       
                         @if (item.treatType === 'bar') {
-                            <li [style.order]="item.menuOrder">
-                                <span class="treat-name">{{ item.itemName }}</span>
-                            </li>
-                        }
-                    }
-                </ul>
-            </div>
-            <div class="treat-container">
-                <h5>Dot Cakes</h5>
-                <ul class="treat-list">
-                    @for(item of menuItems.filter(i => i.itemTags && i.itemTags.includes('TG')); track item.id) {
-                        @if (item.treatType === 'dot') {
-                            <li [style.order]="item.menuOrder">
+                            <li>
                                 <span class="treat-name">{{ item.itemName }}</span>
                             </li>
                         }
@@ -36,9 +26,9 @@
             <div class ="treat-container">
                 <h5>Mini Cheesecakes</h5>
                 <ul class="treat-list">
-                    @for(item of menuItems.filter(i => i.itemTags && i.itemTags.includes('TG')); track item.id) {
+                    @for(item of menuItems.filter(i => i.itemTags && i.itemTags.includes('TG')).slice().sort((a, b) => (a.menuOrder === 0 ? 1 : b.menuOrder === 0 ? -1 : a.menuOrder - b.menuOrder)); track item.id) {                       
                         @if (item.treatType === 'mini') {
-                            <li [style.order]="item.menuOrder">
+                            <li>
                                 <span class="treat-name">{{ item.itemName }}</span>
                             </li>
                         }
@@ -50,9 +40,9 @@
            <div class="treat-container">
                 <h5>Cupcakes</h5>
                 <ul class="treat-list">
-                    @for(item of menuItems.filter(i => i.itemTags && i.itemTags.includes('TG')); track item.id) {
+                    @for(item of menuItems.filter(i => i.itemTags && i.itemTags.includes('TG')).slice().sort((a, b) => (a.menuOrder === 0 ? 1 : b.menuOrder === 0 ? -1 : a.menuOrder - b.menuOrder)); track item.id) {                       
                         @if (item.treatType === 'cupcake') {
-                            <li [style.order]="item.menuOrder">
+                            <li>
                                 <span class="treat-name">{{ item.itemName }}</span>
                             </li>
                         }
@@ -62,9 +52,9 @@
             <div class="treat-container">
                 <h5>Cookies</h5>
                 <ul class="treat-list">
-                    @for(item of menuItems.filter(i => i.itemTags && i.itemTags.includes('TG')); track item.id) {
+                    @for(item of menuItems.filter(i => i.itemTags && i.itemTags.includes('TG')).slice().sort((a, b) => (a.menuOrder === 0 ? 1 : b.menuOrder === 0 ? -1 : a.menuOrder - b.menuOrder)); track item.id) {                       
                         @if (item.treatType === 'cookie') {
-                            <li [style.order]="item.menuOrder">
+                            <li>
                                 <span class="treat-name">{{ item.itemName }}</span>
                             </li>
                         }
@@ -74,10 +64,10 @@
         </ul>
     </div>
     <div class="undertext-div">
-        <h4>For our full custom menu & flavor list, click <a href="custom_menu.pdf" target="_blank">here</a>.</h4>
+        <h4>Pre-orders <span class="dates">must</span> be received by <span class="dates">Saturday November 21st</span></h4>
+        <h4>Our cases will be full <span class="dates">Wednesday November 25!</span></h4>
+        <h4>No items will be "held", all treats are first come, first served.</h4>
         <br>
-        <h4>To place an order, please call us at <a href="tel:7577076943" style="text-decoration:none;">757-707-6943</a> or email us at <a href="mailto:enjoycheesecakesvb@gmail.com" style="text-decoration:none;">enjoycheesecakesvb@gmail.com.</a></h4>
-        <h4>Please allow 24 - 48 hours for us to respond to messages.</h4>
     </div>
 </div>
 
