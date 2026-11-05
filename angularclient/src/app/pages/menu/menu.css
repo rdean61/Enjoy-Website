@@ -11,6 +11,7 @@
     z-index: 999;
     border-radius: 10px;
     border: 1px solid black;
+    overflow-x: hidden;
 }
 
 .popup-container {
@@ -23,11 +24,11 @@
     font-style: normal;
     padding: 2%;
     width: 97%;
-    
+    flex-wrap: flex;
 }
 
 .popup-container h6 {
-    font-size: 150%;
+    font-size: clamp(.5rem, 1.4vw, 1.5rem);
 }
 
 .close-popup {
