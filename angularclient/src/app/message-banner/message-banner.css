@@ -1,0 +1,33 @@
+header {
+    position: sticky;
+}
+
+.message-banner {
+    width: 100%;
+    background: palevioletred;
+    text-align: center;
+    padding-top: 5px;
+    outline: 1px solid black;
+}
+
+h3 {
+    font-family: "Trirong", serif;
+    font-weight: 450;
+    font-style: normal;
+    font-size: clamp(1.2rem, 1.4vw, 1.8rem);
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+a:hover {
+    color:antiquewhite;
+}
+
+a.active {
+    pointer-events: none;
+    cursor: default;
+}
