@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuitemService } from '../../services/menuitem';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -26,6 +26,8 @@ export class AdminUpdateMenuitem implements OnInit{
 
   public menuItems: any [] = [];
 
+  constructor(private changeDetectorRef: ChangeDetectorRef) {}
+
   ngOnInit(): void {
 
     this.itemId = this.route.snapshot.paramMap.get('id');
@@ -38,6 +40,9 @@ export class AdminUpdateMenuitem implements OnInit{
           const retrieved = data.find(i => String(i.id || i._id) === String(this.itemId));
           if (retrieved){
             this.menuItem = {...retrieved};
+
+            this.changeDetectorRef.detectChanges();
+            
           }
         },
         error: (err) => {
