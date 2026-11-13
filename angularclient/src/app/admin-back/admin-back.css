@@ -1,0 +1,10 @@
+.admin-back {
+    background-color: black;
+    color: white;
+    z-index: 1000;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 150px;
+    right: 20px;
+}

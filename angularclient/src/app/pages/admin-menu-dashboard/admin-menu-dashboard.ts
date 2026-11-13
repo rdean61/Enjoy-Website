@@ -4,9 +4,10 @@ import { MenuitemService } from '../../services/menuitem';
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
+import { AdminBack } from '../../admin-back/admin-back';
 
 @Component({
-  imports: [CommonModule, FormsModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, FormsModule, RouterLink, RouterLinkActive, AdminBack],
   selector: 'app-admin-menu-dashboard',
   styleUrl: './admin-menu-dashboard.css',
   templateUrl: './admin-menu-dashboard.html',
