@@ -18,19 +18,19 @@ export const routes: Routes = [
 
     { path:'', redirectTo: 'home', pathMatch: 'full'},
 
-    { path:'home', component: Home },
-    { path: 'menu', component: Menu },
-    { path:'gallery', component: Gallery },
-    { path: 'about', component: About },
-    { path: 'holidays', component: Holidays},
-    { path: 'admin-login', component: AdminLogin },
-    { path:'admin-dashboard', component: AdminDashboard, canActivate: [authGuard] },
-    { path: 'admin-menu-dashboard', component: AdminMenuDashboard, canActivate: [authGuard]  },
-    { path: 'admin-add-menuitem', component: AdminAddMenuitem, canActivate: [authGuard]  },
-    { path:'admin-update-menuitem/:id', component: AdminUpdateMenuitem, canActivate: [authGuard]  },
-    { path: 'admin-reports-dashboard', component: AdminReportsDashboard, canActivate: [authGuard]  },
-    { path: 'admin-reviews-dashboard', component: AdminReviewsDashboard, canActivate: [authGuard]  },
-    { path: 'admin-add-review', component: AdminAddReview, canActivate: [authGuard]  }, 
+    { path:'home', component: Home, title: 'Home | Enjoy Cheesecakes & Treats' },
+    { path: 'menu', component: Menu, title: 'Menu | Enjoy Cheesecakes & Treats' },
+    { path:'gallery', component: Gallery, title: 'Gallery | Enjoy Cheesecakes & Treats' },
+    { path: 'about', component: About, title: 'About | Enjoy Cheesecakes & Treats' },
+    { path: 'holidays', component: Holidays, title: 'Holiday Menu | Enjoy Cheesecakes & Treats' },
+    { path: 'admin-login', component: AdminLogin, title: 'Admin Login | Enjoy Cheesecakes & Treats' },
+    { path:'admin-dashboard', component: AdminDashboard, title: 'Admin Dashboard | Enjoy Cheesecakes & Treats', canActivate: [authGuard] },
+    { path: 'admin-menu-dashboard', component: AdminMenuDashboard, title: 'Menu Dashboard | Enjoy Cheesecakes & Treats', canActivate: [authGuard]  },
+    { path: 'admin-add-menuitem', component: AdminAddMenuitem, title: 'Add Menu Item | Enjoy Cheesecakes & Treats', canActivate: [authGuard]  },
+    { path:'admin-update-menuitem/:id', component: AdminUpdateMenuitem, title: 'Update Menu Item | Enjoy Cheesecakes & Treats', canActivate: [authGuard]  },
+    { path: 'admin-reports-dashboard', component: AdminReportsDashboard, title: 'Reports Dashboard | Enjoy Cheesecakes & Treats', canActivate: [authGuard]  },
+    { path: 'admin-reviews-dashboard', component: AdminReviewsDashboard, title: 'Reviews Dashboard | Enjoy Cheesecakes & Treats', canActivate: [authGuard]  },
+    { path: 'admin-add-review', component: AdminAddReview, title: 'Add Review | Enjoy Cheesecakes & Treats', canActivate: [authGuard]  },
 
     { path: '**', redirectTo: 'home'}
 ];
