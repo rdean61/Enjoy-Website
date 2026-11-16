@@ -3,9 +3,10 @@ import { CommonModule, TrailingSlashPathLocationStrategy } from '@angular/common
 import { MenuitemService } from '../../services/menuitem'
 import { ReviewService } from '../../services/review'
 import { isActive } from '@angular/router';
+import { AdminBack } from '../../admin-back/admin-back';
 
 @Component({
-  imports: [CommonModule],
+  imports: [CommonModule, AdminBack],
   selector: 'app-admin-reports-dashboard',
   styleUrl: './admin-reports-dashboard.css',
   templateUrl: './admin-reports-dashboard.html',

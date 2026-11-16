@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { ReviewService } from '../../services/review';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AdminBack } from '../../admin-back/admin-back';
 
 @Component({
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, AdminBack],
   selector: 'app-admin-add-review',
   styleUrl: './admin-add-review.css',
   templateUrl: './admin-add-review.html',

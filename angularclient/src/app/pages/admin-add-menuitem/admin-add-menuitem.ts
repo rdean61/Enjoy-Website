@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 import { MenuitemService } from '../../services/menuitem';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AdminBack } from '../../admin-back/admin-back';
 
 @Component({
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, AdminBack],
   selector: 'app-admin-add-menuitem',
   styleUrl: './admin-add-menuitem.css',
   templateUrl: './admin-add-menuitem.html',

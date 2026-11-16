@@ -1,10 +1,23 @@
 .admin-back {
-    background-color: black;
     color: white;
     z-index: 1000;
     height: 50px;
     width: 50px;
     position: absolute;
     top: 150px;
-    right: 20px;
+    left: 1vw;
+    font-family: "Trirong", serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 100%;
+}
+
+.admin-back button {
+    aspect-ratio: 1;
+    padding: 1rem;
+    border-radius: 50%;
+    background-image: url('../../../public/backbtn.png');
+    background-size: contain;
+    border: 1px solid black;
+    width: 2.5vw;
 }

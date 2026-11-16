@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   imports: [],
@@ -6,4 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './admin-back.css',
   templateUrl: './admin-back.html',
 })
-export class AdminBack {}
+export class AdminBack {
+  private location = inject(Location);
+
+  goBack(): void {
+    this.location.back();
+  }
+  
+}

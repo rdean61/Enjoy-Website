@@ -4,9 +4,10 @@ import { ReviewService } from '../../services/review'
 import { FormsModule } from '@angular/forms';
 import { RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
+import { AdminBack } from '../../admin-back/admin-back';
 
 @Component({
-  imports: [CommonModule, FormsModule, RouterLink, RouterLinkActive],
+  imports: [CommonModule, FormsModule, RouterLink, RouterLinkActive, AdminBack],
   selector: 'app-admin-reviews-dashboard',
   styleUrl: './admin-reviews-dashboard.css',
   templateUrl: './admin-reviews-dashboard.html',
