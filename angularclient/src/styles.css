@@ -1,4 +1,5 @@
 body, html {
-    min-width: 1200px; /* Matches your desktop layout width */
-    overflow-x: auto;   /* Allows users to pan horizontally if needed */
+    margin: 0;
+    height: 100%;
+    overflow-x: clip; 
 }

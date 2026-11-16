@@ -1,4 +1,5 @@
-body, html {
-    min-width: 1200px; /* Matches your desktop layout width */
-    overflow-x: auto;   /* Allows users to pan horizontally if needed */
+:host {
+  display: block;
+  height: 100vh;
+  overflow-x: auto;
 }
