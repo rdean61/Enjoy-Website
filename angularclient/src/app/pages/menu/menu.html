@@ -14,7 +14,7 @@
 }
 <div class="mbody">
     <div class="menu-header">
-        <h3 class="menu-title">Menu for Week of {{ lastWednesday | date: 'MMMM d' }} - {{ nextSunday | date: 'd' }}</h3>
+        <h3 class="menu-title">Menu for Week of {{ lastWednesday | date: 'MMMM d' }} -  @if(nextSunday.getMonth() != lastWednesday.getMonth()) { {{ nextSunday | date: 'MMMM d' }} } @else { {{ nextSunday | date: 'd' }} }</h3>
     </div>
     <div class="over-text">
         <h6>Check us out on <a href="https://www.ubereats.com/store/enjoy-cheesecakes-and-treats-llc/">Uber Eats!</a></h6>

@@ -45,18 +45,20 @@ export class Menu implements OnInit{
   private getDays(): void {
     const today = new Date();
     const todayDay = today.getDay();
+    console.log('Date: ', today, 'Day: ', todayDay);
 
     const lastWedDate = new Date(today);
-    const dayDiff = (todayDay >= 3) ? (todayDay - 3) : (todayDay + 4);
+    const dayDiff = (todayDay > 3) ? (todayDay - 3) : ((todayDay < 3) ? (todayDay === 0 ? 4 : (-1 * (3 - todayDay))) : 0);
+
+
     lastWedDate.setDate(today.getDate() - dayDiff);
     this.lastWednesday = lastWedDate;
 
     const nextSunDate = new Date(today);
-    const daySum = (todayDay === 0) ? 7 :(7 - todayDay);
+    const daySum = (todayDay === 0) ? 0 :(7 - todayDay);
     nextSunDate.setDate(today.getDate() + daySum);
     this.nextSunday = nextSunDate;
-
-  }
+}
 
   public closePopup(): void {
     this.popupOpen = false;
