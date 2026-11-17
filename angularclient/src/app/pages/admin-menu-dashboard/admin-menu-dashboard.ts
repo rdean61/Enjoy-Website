@@ -43,6 +43,11 @@ export class AdminMenuDashboard implements OnInit{
           ogMenuOrder: item.menuOrder
         }));
 
+        const savedTreatType = sessionStorage.getItem('activeTreatType');
+        if (savedTreatType) {
+          this.displayTreatType = savedTreatType;
+        }
+
         this.filterTreatType(this.displayTreatType);
 
         this.changeDetectorRef.detectChanges();
@@ -60,6 +65,8 @@ export class AdminMenuDashboard implements OnInit{
 
   public filterTreatType(treatTypeChoice: string): void {
     this.displayTreatType = treatTypeChoice;
+
+    sessionStorage.setItem('activeTreatType', treatTypeChoice);
 
     const typeHolder = treatTypeChoice;
     const searchQuery = this.searchContent.trim().toLowerCase();
