@@ -1,6 +1,6 @@
 .popup-main {
     position: fixed;
-    top: 25%;
+    top: 30%;
     left: 32.5%;
     width: 35%;
     background: palevioletred;
@@ -27,7 +27,7 @@
 }
 
 .popup-container h6 {
-    font-size: clamp(.5rem, 1.4vw, 1.5rem);
+    font-size: clamp(.5rem, 4vw, 1.5rem);
 }
 
 .close-popup {
@@ -46,7 +46,7 @@
     color: red
 }
 
-.menu-header {
+.menu-header { 
     padding-top: 30px;
     text-align: center;
     font-family: "Trirong", serif;
@@ -54,8 +54,8 @@
     font-style: normal;
 }
 
-.menu-header h3 {
-    font-size: 300%;
+.menu-header h3 { 
+    font-size: clamp(1rem, 4vw, 3rem);
     text-decoration: underline;
 }
 
@@ -63,13 +63,13 @@
     justify-items: center;
 }
 
-.over-text h6 {
+.over-text h6 { 
     text-align: center;
     width: 100%;
     font-family: "Trirong", serif;
     font-weight: 600;
     font-style: normal;
-    font-size: 150%;
+    font-size: clamp(.5rem, 4vw, 1.5rem);
     color: rgb(105, 189, 105);
     border-radius: 10px;
 }
@@ -91,13 +91,13 @@
     align-items: center;
 }
 
-h5 {
+h5 { 
     padding-top: 30px;
     text-align: center;
     font-family: "Trirong", serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 250%;
+    font-size: clamp(.83rem, 4vw, 2.5rem);
     text-decoration: underline;
 }
 
@@ -123,7 +123,7 @@ h5 {
     font-family: "Trirong", serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 200%;
+    font-size: clamp(.66rem, 4vw, 2rem);
 }
 
 .undertext-div {
@@ -133,6 +133,10 @@ h5 {
     font-family: "Trirong", serif;
     font-weight: 500;
     font-style: normal;
+}
+
+.undertext-div h4 {
+    font-size: clamp(.5rem, 4vw, 1.5rem);
 }
 
 .undertext-div h4 a  {
