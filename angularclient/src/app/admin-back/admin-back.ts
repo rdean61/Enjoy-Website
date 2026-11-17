@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Location } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   imports: [],
@@ -8,10 +8,20 @@ import { Location } from '@angular/common';
   templateUrl: './admin-back.html',
 })
 export class AdminBack {
-  private location = inject(Location);
+  private router = inject(Router);
+
+  currentUrl: string = '';
 
   goBack(): void {
-    this.location.back();
+    this.currentUrl = this.router.url;
+
+    if (this.currentUrl.includes('/admin-menu-dashboard') || this.currentUrl.includes('/admin-reviews-dashboard') || this.currentUrl.includes('/admin-reports-dashboard')) {
+      this.router.navigate(['/admin-dashboard']);
+    } else if (this.currentUrl.includes('/admin-add-menuitem') || this.currentUrl.includes('/admin-update-menuitem')) {
+      this.router.navigate(['/admin-menu-dashboard']);
+    } else if (this.currentUrl.includes('/admin-add-review')) {
+      this.router.navigate(['/admin-reviews-dashboard']);
+    }
   }
   
 }
