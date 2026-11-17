@@ -109,10 +109,14 @@ export class AdminMenuDashboard implements OnInit{
 
   }
   get menuOrderPopulate(): number[] {
-    const activeItems = this.displayItems
-    .map(item => Number (item.menuOrder ?? item.order) || 0)
+    const activeItems = this.menuItems
+    .filter(item => {
+      const type = item.treatType || item.treatTypeChoice || '';
+      return type.includes(this.displayTreatType);
+    })
+    .map(item => Number(item.menuOrder ?? item.order) || 0)
     .filter(order => order > 0);
-
+    
     const menuOrderMax = activeItems.length > 0 ? Math.max(...activeItems) : 0;
 
     return Array.from({ length: menuOrderMax + 1 }, (_, i) => i + 1)
